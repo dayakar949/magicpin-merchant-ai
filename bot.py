@@ -18,6 +18,13 @@ from pydantic import BaseModel
 
 
 app = FastAPI(title="Magicpin Vera Bot", version="1.0.0")
+@app.get("/")
+async def root():
+    return {
+        "status": "ok",
+        "service": "magicpin-merchant-ai",
+        "message": "Vera merchant AI bot is running"
+    }
 
 
 # ---------------------------------------------------------------------
