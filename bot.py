@@ -680,6 +680,15 @@ def healthz():
 
 
 @app.get("/v1/metadata")
+async def metadata():
+    return {
+        "team_name": "Dayakar",
+        "team_members": ["J Dayakar"],
+        "model": "deterministic",
+        "approach": "deterministic context-grounded composer",
+        "contact_email": "cs23bt047@iitdh.ac.in",
+        "version": "1.0.0"
+    }
 def metadata():
     return {
         "team_name": os.getenv("TEAM_NAME", "Your Team"),
