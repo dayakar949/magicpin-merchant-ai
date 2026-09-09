@@ -879,7 +879,16 @@ def reply(request: ReplyRequest):
     }
 
 
-@app.post("/v1/teardown")
+@app.get("/v1/metadata")
+async def metadata():
+    return {
+        "team_name": "Dayakar",
+        "team_members": ["J Dayakar"],
+        "model": "deterministic",
+        "approach": "deterministic context-grounded composer",
+        "contact_email": "cs23bt047@iitdh.ac.in",
+        "version": "1.0.0"
+    }
 def teardown():
     contexts["category"].clear()
     contexts["merchant"].clear()
